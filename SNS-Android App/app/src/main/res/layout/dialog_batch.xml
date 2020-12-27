@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.07"
+            android:lineSpacingExtra="8sp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:text="Batch"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:typeface="sans" />
+
+        <View
+            android:id="@+id/viewy"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <RadioGroup
+            android:id="@+id/batchRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:paddingBottom="20dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/batch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioButton3"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:text="1st"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/batch2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioButton3"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:text="2nd"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/barch3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioButton3"
+                android:layout_marginBottom="0dp"
+                android:text="3rd"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroup"
+            android:columnCount="2"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:paddingTop="10dp"
+            android:rowCount="1"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/batchCancel"
+                style="?android:textAppearanceSmall"
+                android:layout_width="115dp"
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_rowSpan="1"
+                android:background="@null"
+                android:text="Cancel"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/batchOk"
+                style="?android:textAppearanceSmall"
+                android:layout_width="148dp"
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_rowSpan="1"
+                android:background="@null"
+                android:text="Ok  "
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

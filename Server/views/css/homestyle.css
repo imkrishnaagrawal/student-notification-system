@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:400,500,500italic,400italic,600,600italic,700,700italic,800,800italic,300,300italic);
+body {
+  /*css for full size background image*/
+  background: url(../img/image3.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  background-color: #060;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+#cred {
+  height: 160px;
+  margin-left: 5%;
+  width: 30%;
+  border: white;
+}
+
+#cred2 {
+  background-color: red;
+  height: 100px;
+  width: 30%;
+  border: white;
+}
+
+#msg {
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.assignmentno {
+  padding-left: 30px;
+}
+
+.select {
+  border: 0px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.form-outer {
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.80;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.assno {
+  border-radius: 10px;
+}
+
+.assignmentname {
+  text-align: center;
+  color: darkgrey;
+  border-radius: 10px;
+}

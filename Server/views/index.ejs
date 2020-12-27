@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Login Form using Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Poiret+One'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(document).ready(function() {
+
+
+      $('.btn-toggle').click(function() {
+
+        $(this).find('.btn').toggleClass('btn-default btn-primary');
+      });
+    });
+  </script>
+
+
+</head>
+
+<body style="padding-top: 250px;">
+  <div class="container login-form">
+    <h2 class="login-title">- Welcome -</h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="log-form">
+          <form action="tlogin" method="post">
+              <br>
+            <div class="input-group login-userinput">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input id="txtUser" type="text" class="form-control" name="email" placeholder="Username">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+              <span id="showPassword" class="input-group-btn">
+            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+          </span>
+            </div>
+              <br>
+            <button class="btn btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+            <div class="checkbox login-options">
+
+              <br> <a href="register" class="register"><b>Register</b></a>
+            </div>
+          </form>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+
+
+
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

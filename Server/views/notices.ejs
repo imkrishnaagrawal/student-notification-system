@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../dist/imageuploadify.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../dist/imageuploadify.min.css"><br type="_moz">
+  <link rel="stylesheet" href="../css/homestyle.css">
+
+  <script>
+    $(document).ready(function() {
+      $('.buttonFile').imageuploadify();
+
+      var SE = "<%= subject['SET'] ; %>,<%= subject['SEP'] ; %>";
+      var list = SE.split(",");
+      var list = list.filter(function(itm) {
+        return itm !== "NONE"
+      });
+      $('#subject').empty()
+      $.each(list, function(i, item) {
+        $('#subject').append($('<option>', {
+          value: item,
+          text: item
+        }));
+      });
+
+
+      $('#year').on('change', function() {
+        var selection = $(this).val();
+        switch (selection) {
+          case "SE":
+            var SE = "<%= subject['SET'] ; %>,<%= subject['SEP'] ; %>";
+            var list = SE.split(",");
+            var list = list.filter(function(itm) {
+              return itm !== "NONE"
+            });
+            $('#subject').empty();
+            $.each(list, function(i, item) {
+              $('#subject').append($('<option>', {
+                value: item,
+                text: item
+              }));
+            });
+            console.log(list);
+            break;
+          case "TE":
+            var TE = "<%= subject['TET'] ; %>,<%= subject['TEP'] ; %>";
+            var list = TE.split(",");
+            list.splice($.inArray("MP", list), 1);
+            var list = list.filter(function(itm) {
+              return itm !== "NONE"
+            });
+            $('#subject').empty();
+            $.each(list, function(i, item) {
+              $('#subject').append($('<option>', {
+                value: item,
+                text: item
+              }));
+            });
+            console.log(list);
+            break;
+          case "BE":
+            var BE = "<%= subject['BET'] ; %>,<%= subject['BEP'] ; %>";
+            var list = BE.split(",");
+            var list = list.filter(function(itm) {
+              return itm !== "NONE"
+            });
+            $('#subject').empty();
+            $.each(list, function(i, item) {
+              $('#subject').append($('<option>', {
+                value: item,
+                text: item
+              }));
+            });
+            console.log(list);
+            break;
+          default:
+            alert("Selec");
+        }
+      });
+
+
+
+    });
+  </script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <%= firstname %>
+            <%= lastname %>
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="home">Assignments</a></li>
+        <li><a href="writeups">WriteUps</a></li>
+        <li class="active"><a href="notices" >Notices</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-2 col-md-1">
+      </div>
+      <div class="col-lg-8 col-md-10">
+
+        <div class="form-outer">
+          <br>
+          <pre>  Notices  </pre>
+          <br>
+          <form id="myform" name="myform" enctype="multipart/form-data" method="post" class="dropzone" action="notice">
+
+
+            <div class="form-group">
+              <div class="row">
+                <div id="cred" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon "><b>Year &nbsp;</b></span></span>
+                    <select id="year" class="form-control" name="year" required>
+                      <option value="All">Computer Department</option>
+                      <option value="S.E">S.E</option>
+                      <option value="T.E">T.E</option>
+                      <option value="B.E">B.E</option>
+                    </select>
+
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon "><b>Division</b></span></span>
+                    <select id="division" class="form-control" name="division" required>
+                      <option value="All">Both A and B</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                    </select>
+                  </div>
+                  <br>
+
+                </div>
+                <div id="cred" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon "><b>Subject&nbsp;</b></span></span>
+                    <select class="form-control" name="subject" id="subject" required>
+                    </select>
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon "><b>Batch&nbsp;</b></span></span>
+                    <select id="batch" class="form-control" name="batch" required>
+                      <option value="All">All Batches</option>
+                      <option value="1st">1st</option>
+                      <option value="2nd">2nd</option>
+                      <option value="3rd">3rd</option>
+                    </select>
+                  </div>
+
+                </div>
+
+
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-lg-12">
+
+
+                  <div id="msg" class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon" ><b>Subject</b></span></span>
+                    <input type="text" class="form-control" id="msubject" name="msubject" placeholder="Enter Subject " required></textarea>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+
+                <div class="col-lg-12">
+
+
+                  <div id="msg" class="input-group">
+                    <span class="input-group-addon assno"><span class="glyphicon "><b>Message</b></span></span>
+                    <textarea class="form-control" rows="6" type="text" id="message" name="message" placeholder="Instruction Or Message To Convery Along With Notification" required></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-12">
+                      <br>
+                      <div class="fallback">
+                          <input name="file" class="buttonFile" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" type="file" multiple='multiple' />
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+            <br>
+            <br><br>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2"></div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                <input id="button" class="form-control-file btn btn-block " style=" background-color: dimgrey;color: white;" type="submit">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2"></div>
+            </div>
+            <br><br>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-1">
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+</body>
+
+</html>
